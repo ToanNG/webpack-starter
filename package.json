@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node dev-server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --compilers jsx:compiler.js __tests__/*-test.jsx",
+    "check": "jscs app/scripts"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "babel-loader": "^5.0.0",
     "css-loader": "^0.11.0",
     "jsx-loader": "^0.13.1",
+    "node-bourbon": "^4.2.1-beta1",
     "sass-loader": "^0.4.2",
     "style-loader": "^0.11.0",
     "webpack": "^1.8.9",

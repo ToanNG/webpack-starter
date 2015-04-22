@@ -1,5 +1,8 @@
+@import "bourbon";
+
 body {
   h1 {
     color: red;
+    @include linear-gradient(to right, yellow, white);
   }
 }

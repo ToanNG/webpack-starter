@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var bourbon = require('node-bourbon').includePaths;
 
 module.exports = {
   entry: [
@@ -24,7 +25,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: 'style!css!sass'
+        loader: 'style!css!sass?includePaths[]=' + bourbon
       }
     ]
   }
