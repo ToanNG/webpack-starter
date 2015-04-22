@@ -21,6 +21,10 @@ module.exports = {
         test: /\.jsx?$/,
         loaders: ['babel', 'jsx-loader?harmony=true'],
         include: path.join(__dirname, 'app/scripts')
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css!sass'
       }
     ]
   }
