@@ -1,7 +1,12 @@
 @import "bourbon";
+@import "fonts";
 
 body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+
   h1 {
+    font-weight: 500;
     color: red;
     @include linear-gradient(to right, yellow, white);
   }

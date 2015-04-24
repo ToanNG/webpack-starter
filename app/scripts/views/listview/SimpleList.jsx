@@ -6,7 +6,7 @@ var SimpleList = React.createClass({
   render: function () {
     return (
       <div>
-        <h1>This is simple listview</h1>
+        <h1>This is Simple Listview</h1>
         <button className="btn btn-default">Button</button>
       </div>
     );
