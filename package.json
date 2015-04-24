@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node dev-server.js",
     "test": "mocha --compilers jsx:compiler.js __tests__/*-test.jsx",
-    "check": "jscs app/scripts"
+    "check": "jscs app/scripts",
+    "build": "webpack --config webpack.config.js --progress --colors"
   },
   "repository": {
     "type": "git",
@@ -22,8 +23,8 @@
     "babel-core": "^5.1.11",
     "babel-loader": "^5.0.0",
     "bootstrap-sass": "^3.3.4",
-    "bootstrap-sass-loader": "^1.0.4",
     "css-loader": "^0.11.0",
+    "extract-text-webpack-plugin": "^0.6.0",
     "file-loader": "^0.8.1",
     "imports-loader": "^0.6.3",
     "jquery": "^2.1.3",
