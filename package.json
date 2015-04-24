@@ -37,6 +37,12 @@
     "webpack-dev-server": "^1.8.2"
   },
   "dependencies": {
-    "react": "^0.13.2"
+    "flux": "^2.0.1",
+    "keymirror": "^0.1.1",
+    "lodash": "^3.7.0",
+    "object-assign": "^2.0.0",
+    "react": "^0.13.2",
+    "react-bootstrap": "^0.21.0",
+    "react-router": "^0.13.2"
   }
 }

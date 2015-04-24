@@ -7,9 +7,12 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
 
-  h1 {
-    font-weight: 500;
-    color: red;
-    @include linear-gradient(to right, yellow, white);
+  .navbar-brand {
+    padding: 10px;
+  }
+
+  .logo {
+    width: 34px;
+    height: 30px;
   }
 }

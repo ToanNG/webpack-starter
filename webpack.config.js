@@ -17,7 +17,7 @@ module.exports = {
     new ExtractTextPlugin('styles.css')
   ],
   resolve: {
-    modulesDirectories: ['web_modules', 'node_modules', 'app/scripts', 'app/styles'],
+    modulesDirectories: ['web_modules', 'node_modules', 'app/scripts', 'app/styles', 'app/images'],
     extensions: ['', '.js', '.jsx']
   },
   module: {
@@ -32,6 +32,7 @@ module.exports = {
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader?includePaths[]=' + bourbon + '&' +
           'includePaths[]=' + path.resolve(__dirname, './node_modules/bootstrap-sass/assets/stylesheets'))
       },
+      { test: /\.(png|jpg)$/, loader: 'url?limit=8192' },
 
       // **IMPORTANT** This is needed so that each bootstrap js file required by
       // bootstrap-webpack has access to the jQuery object
