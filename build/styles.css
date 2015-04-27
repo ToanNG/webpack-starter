@@ -4924,9 +4924,8 @@ button.close {
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400; }
-  body h1 {
-    font-weight: 500;
-    color: red;
-    background-color: yellow;
-    background-image: -webkit-linear-gradient(left, yellow, white);
-    background-image: linear-gradient(to right,yellow, white); }
+  body .navbar-brand {
+    padding: 10px; }
+  body .logo {
+    width: 34px;
+    height: 30px; }

@@ -1,5 +1,8 @@
 'use strict';
 
+require('bootstrap-sass');
+require('main.scss');
+
 var React = require('react');
 var Router = require('react-router');
 var {
@@ -9,9 +12,8 @@ var {
   RouteHandler,
   Link
 } = Router;
-require('bootstrap-sass');
 
-require('main.scss');
+var TopMenu = require('widgets/menu/TopMenu');
 
 var App = React.createClass({
   render: function () {
@@ -31,10 +33,7 @@ var App = React.createClass({
             </div>
 
             <div className="collapse navbar-collapse" id="navbar-collapse">
-              <ul className="nav navbar-nav">
-                <li className="active"><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-              </ul>
+              <TopMenu />
             </div>
           </div>
         </nav>

@@ -37,12 +37,16 @@
     "webpack-dev-server": "^1.8.2"
   },
   "dependencies": {
+    "body-parser": "^1.12.3",
+    "express": "^4.12.3",
     "flux": "^2.0.1",
     "keymirror": "^0.1.1",
     "lodash": "^3.7.0",
     "object-assign": "^2.0.0",
+    "promise": "^7.0.1",
     "react": "^0.13.2",
     "react-bootstrap": "^0.21.0",
-    "react-router": "^0.13.2"
+    "react-router": "^0.13.2",
+    "superagent": "^1.2.0"
   }
 }
