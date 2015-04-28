@@ -8,7 +8,7 @@ var CHANNELS_URL = 'https://fox-staging.herokuapp.com/api/v1/channels.json';
 
 function cookData(rawData) {
   var process = {
-    getChannelID: function () {
+    getID: function () {
       return rawData.channel_id;
     },
 
@@ -18,7 +18,7 @@ function cookData(rawData) {
   };
 
   return assign(rawData, {
-    channelID: process.getChannelID(),
+    id: process.getID(),
     name: process.getName()
   });
 }

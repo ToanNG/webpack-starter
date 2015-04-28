@@ -7,7 +7,7 @@ var server = new WebpackDevServer(webpack(config), {
   hot: true,
   publicPath: config.output.publicPath,
   stats: { colors: true },
-  historyApiFallback: false
+  historyApiFallback: true
 });
 server.listen(3000, 'localhost', function (err, res) {
   if (err) {

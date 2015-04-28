@@ -33,7 +33,7 @@ var TopMenu = React.createClass({
       <div>
         <SimpleMenu
           dataSource={this.state.channels}
-          onUserClickItem={this._handleUserClickItem}
+          onUserClickItem={this.props.onUserClickMenuItem}
         />
       </div>
     );
@@ -43,10 +43,6 @@ var TopMenu = React.createClass({
     this.setState({
       channels: AppStore.getChannels()
     });
-  },
-
-  _handleUserClickItem: function (channelID) {
-    console.log(channelID);
   }
 });
 

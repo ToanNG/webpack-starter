@@ -14,15 +14,25 @@ var {
 } = Router;
 
 var TopMenu = require('widgets/menu/TopMenu');
+var ChannelPage = require('ChannelPage');
+var config = require('config');
 
 var App = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.func
+  },
+
   render: function () {
     return (
       <div>
         <nav className="navbar navbar-default">
           <div className="container-fluid">
             <div className="navbar-header">
-              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+              <button
+                type="button"
+                className="navbar-toggle collapsed"
+                data-toggle="collapse"
+                data-target="#navbar-collapse">
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
@@ -33,7 +43,9 @@ var App = React.createClass({
             </div>
 
             <div className="collapse navbar-collapse" id="navbar-collapse">
-              <TopMenu />
+              <TopMenu
+                onUserClickMenuItem={this._handleUserClickMenuItem}
+              />
             </div>
           </div>
         </nav>
@@ -41,6 +53,12 @@ var App = React.createClass({
         <RouteHandler />
       </div>
     );
+  },
+
+  _handleUserClickMenuItem: function (channelID) {
+    config.handleUserClickMenuItem(this.context.router, {
+      channelID: channelID
+    });
   }
 });
 
@@ -60,10 +78,11 @@ var routes = (
   <Route handler={App}>
     <DefaultRoute handler={Index} />
     <Route name="index" path="/" handler={Index} />
+    <Route name="channel" path="/channels/:channelID" handler={ChannelPage} />
     <NotFoundRoute handler={NotFound} />
   </Route>
 );
 
-Router.run(routes, function (Handler) {
+Router.run(routes, Router.HistoryLocation, function (Handler) {
   React.render(<Handler />, document.getElementById('root'));
 });
