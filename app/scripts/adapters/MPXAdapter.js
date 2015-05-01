@@ -6,7 +6,7 @@ var Promise = require('promise');
 var utils = require('utils');
 
 var HIGHLIGHT_FEED_URL =
-  'https://feed.theplatform.com/f/levyRC/foxplay_fmp_android?form=cjson';
+  'https://feed.theplatform.com/f/levyRC/foxplay_%channel%_android?form=cjson';
 
 function makeURL(feedURL, params) {
   if (params.hasOwnProperty('range')) {
@@ -60,9 +60,11 @@ function cookData(rawData) {
 }
 
 var MPXAdapter = {
-  findMovie: function (params) {
+  findMovie: function (channelID, params) {
+    var feedURL = HIGHLIGHT_FEED_URL.replace('%channel%', channelID);
+
     return new Promise(function (resolve, reject) {
-      request.get(makeURL(HIGHLIGHT_FEED_URL, params))
+      request.get(makeURL(feedURL, params))
         .end(function (err, res) {
           res = JSON.parse(res.text).entries.map(function (entry) {
             return cookData(entry);

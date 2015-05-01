@@ -10,6 +10,10 @@ var ChannelPage = React.createClass({
     router: React.PropTypes.func
   },
 
+  componentWillReceiveProps: function () {
+    this.forceUpdate();
+  },
+
   render: function () {
     return (
       <MovieList

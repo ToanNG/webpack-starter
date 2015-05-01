@@ -15,8 +15,8 @@ var AppActions = {
     });
   },
 
-  getAllMovies: function () {
-    MPX.findMovie({
+  getAllMovies: function (channelID) {
+    MPX.findMovie(channelID, {
       range: [1, 100]
     }).then(function (res) {
       AppDispatcher.dispatch({

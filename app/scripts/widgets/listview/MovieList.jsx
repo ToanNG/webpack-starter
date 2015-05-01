@@ -16,12 +16,23 @@ require('widgets/listview/movie-list.scss');
 
 var MovieList = React.createClass({
   getInitialState: function () {
-    AppActions.getAllMovies();
+    AppActions.getAllMovies(this.props.channelID);
 
     return {
       movies: [],
       isLoading: true
     };
+  },
+
+  componentWillReceiveProps: function (nextProps) {
+    if (nextProps.channelID !== this.props.channelID) {
+      AppActions.getAllMovies(nextProps.channelID);
+
+      this.setState({
+        movies: [],
+        isLoading: true
+      });
+    }
   },
 
   componentDidMount: function () {
