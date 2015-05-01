@@ -2,6 +2,8 @@
 
 var React = require('react');
 var Router = require('react-router');
+var MovieList = require('widgets/listview/MovieList');
+var config = require('config');
 
 var ChannelPage = React.createClass({
   contextTypes: {
@@ -9,11 +11,22 @@ var ChannelPage = React.createClass({
   },
 
   render: function () {
-    console.log(this.context.router.getCurrentParams().channelID);
-
     return (
-      <div />
+      <MovieList
+        channelID={this.context.router.getCurrentParams().channelID}
+        onUserClickMovie={this._handleUserClickMovie}
+      />
     );
+  },
+
+  _handleUserClickMovie: function (mediaID) {
+    config.handleUserClickMovie(this.context.router, {
+      mediaID: mediaID
+    });
+  },
+
+  _handleUserClickSeries: function (mediaID) {
+
   }
 });
 

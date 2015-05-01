@@ -25,7 +25,7 @@ var App = React.createClass({
   render: function () {
     return (
       <div>
-        <nav className="navbar navbar-default">
+        <nav id="header" className="navbar navbar-default">
           <div className="container-fluid">
             <div className="navbar-header">
               <button
@@ -50,7 +50,9 @@ var App = React.createClass({
           </div>
         </nav>
 
-        <RouteHandler />
+        <div id="content">
+          <RouteHandler />
+        </div>
       </div>
     );
   },

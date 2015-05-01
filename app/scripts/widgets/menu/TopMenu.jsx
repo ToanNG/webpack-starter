@@ -1,8 +1,8 @@
-///////////////////////////////////////
-// Top Menu Widget                   //
-// Author: Khang Hoang               //
-// @input {Function} onUserClickItem //
-///////////////////////////////////////
+///////////////////////////////////////////
+// Top Menu Widget                       //
+// Author: Khang Hoang                   //
+// @input {Function} onUserClickMenuItem //
+///////////////////////////////////////////
 
 'use strict';
 

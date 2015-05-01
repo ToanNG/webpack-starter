@@ -17,6 +17,14 @@ var AppStore = assign({}, EventEmitter.prototype, {
     return channelsArray;
   },
 
+  getMedia: function () {
+    var mediaArray = [];
+    for (var key in _media) {
+      mediaArray[_media[key].index] = _media[key];
+    }
+    return mediaArray;
+  },
+
   emitChange: function (changeEvent) {
     this.emit(changeEvent);
   },
@@ -41,6 +49,16 @@ AppDispatcher.register(function (action) {
       });
       _channels = channels;
       AppStore.emitChange('channelchange');
+      break;
+
+    case AppConstants.api.GET_ALL_MEDIA:
+      var media = {};
+      action.response.forEach(function (entry, i) {
+        entry.index = i;
+        media[entry.mediaID] = entry;
+      });
+      _media = media;
+      AppStore.emitChange('mediachange');
       break;
 
     default:

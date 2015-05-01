@@ -16,7 +16,14 @@ var AppActions = {
   },
 
   getAllMovies: function () {
-
+    MPX.findMovie({
+      range: [1, 100]
+    }).then(function (res) {
+      AppDispatcher.dispatch({
+        actionType: AppConstants.api.GET_ALL_MEDIA,
+        response: res
+      });
+    });
   },
 
   getMovieByGUID: function (guid) {

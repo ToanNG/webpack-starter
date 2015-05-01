@@ -33,7 +33,7 @@ var SimpleMenu = React.createClass({
     var {dataSource, ...other} = this.props;
     var items = [];
 
-    dataSource.forEach(function (item, i) {
+    dataSource.forEach(function (item) {
       items.push(<SimpleMenuItem {...other} key={item.id} item={item} />);
     });
 
