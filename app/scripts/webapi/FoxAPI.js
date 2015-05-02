@@ -14,12 +14,22 @@ function cookData(rawData) {
 
     getName: function () {
       return rawData.display_name;
+    },
+
+    getContentFeedURL: function () {
+      return rawData.android_content_media_feed_url;
+    },
+
+    checkIsSeries: function () {
+      return rawData.android_use_series_feed;
     }
   };
 
   return assign(rawData, {
     id: process.getID(),
-    name: process.getName()
+    name: process.getName(),
+    contentFeedURL: process.getContentFeedURL(),
+    isSeries: process.checkIsSeries()
   });
 }
 

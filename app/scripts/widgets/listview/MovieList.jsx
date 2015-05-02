@@ -14,9 +14,15 @@ var SimpleList = require('views/listview/SimpleList');
 
 require('widgets/listview/movie-list.scss');
 
+function getAllMovies(channelID) {
+  AppActions.getAllMovies(
+    AppStore.getChannelByID(channelID).contentFeedURL
+  );
+}
+
 var MovieList = React.createClass({
   getInitialState: function () {
-    AppActions.getAllMovies(this.props.channelID);
+    getAllMovies(this.props.channelID);
 
     return {
       movies: [],
@@ -26,7 +32,7 @@ var MovieList = React.createClass({
 
   componentWillReceiveProps: function (nextProps) {
     if (nextProps.channelID !== this.props.channelID) {
-      AppActions.getAllMovies(nextProps.channelID);
+      getAllMovies(nextProps.channelID);
 
       this.setState({
         movies: [],

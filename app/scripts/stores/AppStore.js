@@ -17,6 +17,12 @@ var AppStore = assign({}, EventEmitter.prototype, {
     return channelsArray;
   },
 
+  getChannelByID: function (channelID) {
+    return !_channels.hasOwnProperty(channelID) ?
+             undefined :
+             _channels[channelID];
+  },
+
   getMedia: function () {
     var mediaArray = [];
     for (var key in _media) {
