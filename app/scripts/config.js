@@ -9,6 +9,7 @@ function handleUserClickMovie(router, params) {
 }
 
 module.exports = {
+  authURL: 'https://fox-staging.herokuapp.com/providers',
   handleUserClickMenuItem: handleUserClickMenuItem,
   handleUserClickMovie: handleUserClickMovie
 };

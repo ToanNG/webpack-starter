@@ -14,6 +14,7 @@ var {
 } = Router;
 
 var TopMenu = require('widgets/menu/TopMenu');
+var MediaAuth = require('widgets/auth/MediaAuth');
 var ChannelPage = require('ChannelPage');
 var config = require('config');
 
@@ -45,6 +46,9 @@ var App = React.createClass({
             <div className="collapse navbar-collapse" id="navbar-collapse">
               <TopMenu
                 onUserClickMenuItem={this._handleUserClickMenuItem}
+              />
+              <MediaAuth
+                authURL={config.authURL}
               />
             </div>
           </div>

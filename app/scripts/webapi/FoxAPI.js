@@ -4,6 +4,7 @@ var assign = require('object-assign');
 var Promise = require('promise');
 var request = require('superagent');
 
+var CURRENT_USER_URL = 'https://fox-staging.herokuapp.com/api/v1/users/me.json';
 var CHANNELS_URL = 'https://fox-staging.herokuapp.com/api/v1/channels.json';
 
 function cookData(rawData) {
@@ -34,6 +35,18 @@ function cookData(rawData) {
 }
 
 var FoxAPI = {
+  getCurrentUser: function (accessToken) {
+    return new Promise(function (resolve, reject) {
+      request.get(CURRENT_USER_URL, { access_token: accessToken })
+        .end(function (err, res) {
+          if (err) {
+            return reject(err);
+          }
+          return resolve(JSON.parse(res.text));
+        });
+    });
+  },
+
   getChannels: function (countryCode) {
     return new Promise(function (resolve, reject) {
       request.get(CHANNELS_URL + '?country_code=' + (countryCode || 'SG'))
