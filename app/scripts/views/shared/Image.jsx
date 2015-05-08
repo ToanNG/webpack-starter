@@ -1,10 +1,10 @@
-////////////////////////////////
-// Image Component            //
-// Author: Vu Nguyen          //
-// @input {String} src        //
-// @input {String} classes    //
-// @input {JSON} inlineStyles //
-////////////////////////////////
+//////////////////////////////////
+// Image Component              //
+// Author: Vu Nguyen            //
+// @input {String} src          //
+// @input {String} classes      //
+// @input {JSON}   inlineStyles //
+//////////////////////////////////
 
 'use strict';
 
@@ -50,7 +50,7 @@ var Image = React.createClass({
     var classes = (this.props.classes || '') + ' image';
 
     if (!this.state.isLoading) {
-      styles.backgroundImage = 'url(' + encodeURI(this.props.src) + ')';
+      styles.backgroundImage = 'url("' + encodeURI(this.props.src) + '")';
       styles.backgroundSize = 'cover';
     }
 

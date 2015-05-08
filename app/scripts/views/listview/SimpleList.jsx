@@ -1,8 +1,8 @@
 ///////////////////////////////////////
 // Simple List Component             //
 // Author: Toan Nguyen               //
-// @input {Boolean} isLoading        //
-// @input {Array} dataSource         //
+// @input {Boolean}  isLoading       //
+// @input {Array}    dataSource      //
 // @input {Function} onUserClickItem //
 ///////////////////////////////////////
 

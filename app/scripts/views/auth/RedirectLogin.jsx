@@ -1,7 +1,7 @@
 /////////////////////////////////////////
 // Redirect Login Component            //
 // Author: Vu Nguyen                   //
-// @input {JSON} user                  //
+// @input {JSON}     user              //
 // @input {Function} onUserClickLogin  //
 // @input {Function} onUserClickLogout //
 /////////////////////////////////////////

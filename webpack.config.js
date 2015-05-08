@@ -33,6 +33,7 @@ module.exports = {
           'includePaths[]=' + path.resolve(__dirname, './node_modules/bootstrap-sass/assets/stylesheets'))
       },
       { test: /\.(png|jpg|gif)$/, loader: 'url?limit=8192' },
+      { test: /\.json$/, loader: 'json' },
 
       // **IMPORTANT** This is needed so that each bootstrap js file required by
       // bootstrap-webpack has access to the jQuery object
@@ -44,6 +45,7 @@ module.exports = {
       { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&minetype=application/font-woff' },
       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&minetype=application/octet-stream' },
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
+      { test: /\.otf(\?v=\d+\.\d+\.\d+)?$/, loader: 'file' },
       { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&minetype=image/svg+xml' }
     ]
   }
